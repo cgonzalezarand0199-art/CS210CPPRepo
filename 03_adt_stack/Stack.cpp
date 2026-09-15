@@ -7,9 +7,8 @@
 // the same way, nothing calling this class would ever notice.
 
 #include "Stack.h"
-
 #include <iostream>
-#include <ostream>
+
 Stack::Stack() {
     topIndex = 0;
 }
@@ -17,28 +16,28 @@ Stack::Stack() {
 void Stack::push(int value) {
     if (isFull()) {
         std::cout<<"Can't push Stack is full"<<std::endl;
-    } else {
-        topIndex++;
-        data[topIndex] = value;
+        return;
     }
+    data[topIndex] = value;
+    topIndex++;
+
 }
 
 int Stack::pop() {
     if (isEmpty()) {
         std::cout<<"Can't pop Stack is empty"<<std::endl;
-    } else {
-        int value = data[topIndex];
-        topIndex--;
-        return value;
+        return -1;
     }
+        topIndex--;
+        return data[topIndex] ;
 }
 
 int Stack::peek() const {
     if (isEmpty()) {
         std::cout<<"Can't peek Stack is empty"<<std::endl;
-    } else {
-        return data[topIndex];
+        return -1;
     }
+        return data[topIndex - 1];
 }
 
 bool Stack::isEmpty() const {

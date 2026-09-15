@@ -11,10 +11,10 @@
 - My push() functions checks ifFull() first, and if its full it prints "Can't push Stack is full" and returns nothing since nothing needed to be added so topIndex does not change. I chose this behavior beucase it made the most sence to me, and it was simple for me to understand
 
 5) Exactly what happens when pop or peek is called while the stack is empty? Same level of detail as above.
-- They do the similar things as push() but pop()/ peek() give different messages as pop() will "Can't pop Stack is empty" and peek() will give "Can't peek Stack is empty" they both give this message beucase they use isEmpty() to check
+- They do the similar things as push() but pop()/ peek() give different messages as pop() will "Can't pop Stack is empty" and peek() will give "Can't peek Stack is empty" they both give this message beucase they use isEmpty() to check also they both return -1 beucase it's a replacemnt for it to return an int
 
 6) Your array is fixed at 100 slots. If a caller needed more room than that, what would have to change in your class to support it, and what would it likely cost in terms of the time complexity you gave in question 3?
--  I would have needed to change the class for its to use a bigger array or a different array structure. And I believe with this change the time complexity would change into O(n) if element were already in the old element and needed to be copied to thh new. 
+-  I would have needed to change the class for its to use a bigger array or a different array structure. And I believe with this change the time complexity would change into O(n) if element, if in the old element needed to be copied to the new. 
 
 7) Without looking anything up: if this stack were built on a linked list instead of an array, name one advantage and one disadvantage that trade-off would bring, based on what you already know about how arrays and pointers behave differently.
 - A linked-list would grow as needed without being limited to an array of 100. while the disadvantage would be that a link list may require pointer for the nodes while the array stores it in a fixed memory.
