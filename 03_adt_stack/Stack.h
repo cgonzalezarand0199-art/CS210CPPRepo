@@ -11,14 +11,19 @@
 
 #pragma once
 
-#include <vector>
-
 class Stack {
 public:
+    Stack();
+
     void push(int value);   // add to the top
-    void pop();              // remove the top (does nothing if empty)
-    int top() const;         // look at the top without removing it
+    // void pop();              // remove the top (does nothing if empty)
+    // int top() const;         // look at the top without removing it
+    // bool isEmpty() const;
+    // int size() const;
+    int pop();
+    int peek() const;
     bool isEmpty() const;
+    bool isFull() const;
     int size() const;
 
 private:
@@ -28,5 +33,6 @@ private:
     // list next semester, every .cpp file that #includes this header
     // and only calls push/pop/top/isEmpty/size doesn't need to change
     // at all.
-    std::vector<int> data_;
+    int data[100];
+    int topIndex;
 };
